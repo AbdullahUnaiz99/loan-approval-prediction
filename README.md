@@ -1,79 +1,70 @@
-Loan Application Classification Project
-A comprehensive machine learning application for classifying loan applications as Approved or Declined using multiple ML algorithms and advanced imbalanced data handling techniques.
+# 📦 Loan Application Classification Project
 
-🚀 Project Overview
-This project implements a complete machine learning pipeline for loan approval prediction, featuring:
+A comprehensive machine learning application to classify loan applications as **Approved** or **Declined**.  
+Built with multiple ML algorithms, advanced imbalanced data handling techniques, and an interactive Streamlit web interface.
 
-Multiple ML Algorithms: Logistic Regression, KNN, Random Forest, XGBoost
+---
 
-Imbalanced Data Handling: SMOTE, Random Undersampling, Combined techniques
+## 🚀 Project Overview
 
-Comprehensive Evaluation: Multiple metrics and cross-validation
+This project implements a **production-ready ML pipeline** for loan approval prediction, featuring:
+- **Multiple ML Algorithms**: Logistic Regression, KNN, Random Forest, XGBoost
+- **Imbalanced Data Handling**: SMOTE, Random Undersampling, and combined techniques
+- **Robust Evaluation**: Cross-validation and multiple metrics
+- **Interactive Web App**: Built using Streamlit
+- **Modular Codebase**: Clean, documented, and configurable
 
-Interactive Web Application: Streamlit-based user interface
+---
 
-Production-Ready Code: Modular, well-documented, and configurable
+## 📊 Dataset
 
-📊 Dataset Information
-Total Records: ~50,000 loan applications
+|                        | Count     |
+|------------------------|---------:|
+| Total Records          | ~50,000  |
+| Approved               | 40,882   |
+| Declined               | 8,092    |
+| Imbalance Ratio        | ~5:1     |
+| Features               | 14 (9 numerical, 5 categorical) |
 
-Features: 14 features (9 numerical, 5 categorical)
+### ➤ Numerical Features
+- `loan_tenure_months`
+- `interest_rate_offered`
+- `monthly_income`
+- `cibil_score`
+- `existing_emis_monthly`
+- `debt_to_income_ratio`
+- `applicant_age`
+- `number_of_dependents`
+- `loan_amount_requested`
 
-Target Variable: Loan_Status (Approved: 40,882, Declined: 8,092)
+### ➤ Categorical Features
+- `loan_type` — Business Loan, Car Loan, Education Loan, Personal Loan, Home Loan
+- `purpose_of_loan` — Medical Emergency, Education, Debt Consolidation, etc.
+- `employment_status` — Retired, Unemployed, Self-Employed, Salaried, etc.
+- `property_ownership_status` — Rented, Owned, Jointly Owned
+- `gender` — Female, Other, Male
 
-Imbalance Ratio: ~5:1 (Approved:Declined)
+---
 
-Features
-Numerical Features (9):
+## 🏗️ Project Structure
 
-loan_tenure_months
-
-interest_rate_offered
-
-monthly_income
-
-cibil_score
-
-existing_emis_monthly
-
-debt_to_income_ratio
-
-applicant_age
-
-number_of_dependents
-
-loan_amount_requested
-
-Categorical Features (5):
-
-loan_type: Business Loan, Car Loan, Education Loan, Personal Loan, Home Loan
-
-purpose_of_loan: Medical Emergency, Education, Debt Consolidation, etc.
-
-employment_status: Retired, Unemployed, Self-Employed, Salaried, etc.
-
-property_ownership_status: Rented, Owned, Jointly Owned
-
-gender: Female, Other, Male
-
-🏗️ Project Structure
-
+```plaintext
 loan_classification_app/
 ├── data/
-│   ├── raw/                    # Raw data files
+│   ├── raw/                    # Raw data
 │   │   └── loan_data.csv
-│   └── processed/              # Processed data files
+│   └── processed/              # Processed train/test splits
 │       ├── X_train.csv
 │       ├── X_test.csv
 │       ├── y_train.csv
 │       └── y_test.csv
-├── src/                        # Source code
+├── src/                        # Core ML pipeline
 │   ├── __init__.py
-│   ├── data_preprocessing.py   # Data preprocessing pipeline
-│   ├── model_training.py       # Model training pipeline
-│   ├── model_evaluation.py     # Model evaluation utilities
-│   └── utils.py               # Utility functions
-├── models/                     # Trained model files
+│   ├── data_preprocessing.py
+│   ├── model_training.py
+│   ├── model_evaluation.py
+│   └── utils.py
+├── models/                     # Saved trained models
 │   ├── logistic_regression.pkl
 │   ├── knn.pkl
 │   ├── random_forest.pkl
@@ -84,17 +75,17 @@ loan_classification_app/
 │   ├── 02_data_preprocessing.ipynb
 │   ├── 03_model_training.ipynb
 │   └── 04_model_evaluation.ipynb
-├── streamlit_app/             # Streamlit application
-│   ├── app.py                 # Main application
-│   ├── pages/                 # Application pages
+├── streamlit_app/              # Streamlit web app
+│   ├── app.py
+│   ├── pages/
 │   │   ├── prediction.py
 │   │   ├── model_comparison.py
 │   │   └── data_insights.py
-│   └── utils/                 # App utilities
+│   └── utils/
 │       ├── preprocessing.py
 │       └── model_loader.py
-├── config/                    # Configuration files
+├── config/                     # Config files
 │   └── config.yaml
-├── requirements.txt           # Python dependencies
-├── README.md                 # This file
-└── setup.py                  # Package setup
+├── requirements.txt            # Python dependencies
+├── README.md                   # Project documentation
+└── setup.py                    # Package setup

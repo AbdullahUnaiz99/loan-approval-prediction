@@ -1,0 +1,54 @@
+data:
+  raw_path: "data/raw/"
+  processed_path: "data/processed/"
+  target_column: "loan_status"
+
+preprocessing:
+  test_size: 0.2
+  random_state: 42
+  scaling: true
+  handle_outliers: true
+  outlier_method: "iqr"
+
+imbalanced_techniques:
+  - "none"
+  - "smote"
+  - "random_undersampling"
+  - "smote_enn"
+
+models:
+  logistic_regression:
+    params:
+      C: [0.1, 1, 10]
+      penalty: ['l2']  # Only l2 recommended for stability
+      solver: ['liblinear']
+
+  knn:
+    params:
+      n_neighbors: [3, 5, 7, 9]
+      weights: ['uniform', 'distance']
+
+  random_forest:
+    params:
+      n_estimators: [100, 200]
+      max_depth: [10, 20, None]
+      min_samples_split: [2, 5]
+
+  xgboost:
+    params:
+      n_estimators: [100, 200]
+      max_depth: [3, 6]
+      learning_rate: [0.01, 0.1]
+
+evaluation:
+  cv_folds: 5
+  scoring: 'f1'
+  metrics: ['accuracy', 'precision', 'recall', 'f1', 'roc_auc']
+
+model_storage:
+  path: "models/"
+  best_model_name: "best_model.joblib"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(message)s"

@@ -89,3 +89,12 @@ loan_classification_app/
 ├── requirements.txt            # Python dependencies
 ├── README.md                   # Project documentation
 └── setup.py                    # Package setup
+
+---
+## 🚀 Quick Start
+
+### ➤ Run the full machine learning pipeline (preprocessing + training + evaluation)
+- python src/main.py --stage all --data data/raw/loan_application.csv
+
+### ➤ Launch the Streamlit web application
+- streamlit run streamlit_app/app.py

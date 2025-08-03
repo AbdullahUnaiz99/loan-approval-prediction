@@ -91,6 +91,7 @@ loan_classification_app/
 └── setup.py                    # Package setup
 
 ---
+---
 ## 🚀 Quick Start
 
 ### ➤ Run the full machine learning pipeline (preprocessing + training + evaluation)
@@ -98,3 +99,4 @@ loan_classification_app/
 
 ### ➤ Launch the Streamlit web application
 - streamlit run streamlit_app/app.py
+---

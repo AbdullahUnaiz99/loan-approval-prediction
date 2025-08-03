@@ -90,7 +90,8 @@ loan_classification_app/
 ├── README.md                   # Project documentation
 └── setup.py                    # Package setup
 
----
+```
+
 ---
 ## 🚀 Quick Start
 

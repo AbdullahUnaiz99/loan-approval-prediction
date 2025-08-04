@@ -8,3 +8,5 @@ seaborn
 joblib
 pyyaml
 streamlit
+scipy
+
